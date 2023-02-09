@@ -3,9 +3,10 @@ FROM node:14-alpine
 WORKDIR /app
 
 COPY package*json ./
+COPY yarn.lock ./
 
-RUN npm install
+RUN yarn
 
 COPY . .
 
-CMD npm start
+CMD yarn start
